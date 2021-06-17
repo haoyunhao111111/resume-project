@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router,  Switch, Route} from 'react-router-dom';
-
+import Title from './title';
 function App() {
     return (
         <Router>
@@ -9,6 +9,7 @@ function App() {
                 <Route path='/'>
                     <div>可视化简历平台</div>
                     <div>electron+react+typescript</div>
+                    <Title title='test'></Title>
                 </Route>
             </Switch>
         </Router>
