@@ -1,18 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router,  Switch, Route} from 'react-router-dom';
-import Title from './title';
+import Router from './router';
 function App() {
     return (
-        <Router>
-            <Switch>
-                <Route path='/'>
-                    <div>可视化简历平台</div>
-                    <div>electron+react+typescript</div>
-                    <Title title='test'></Title>
-                </Route>
-            </Switch>
-        </Router>
+        <Router></Router>
     )
 }
 ReactDOM.render(<App/>, document.getElementById('root'))
