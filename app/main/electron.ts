@@ -2,8 +2,12 @@
  * @desc electron 主入口文件
 */
 const path = require('path');
-const { app, BrowserWindow} = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const ROOT_PATH = path.join(app.getAppPath(), '../');
 
+ipcMain.on('get-root-path', (event:any) => {
+    event.reply('reply-root-path', ROOT_PATH);
+  });
 function isDev() {
     return process.env.NODE_ENV === 'development'
 }
