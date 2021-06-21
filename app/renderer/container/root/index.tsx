@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { shell } from "electron";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,12 +7,13 @@ import { isHttpOrHttpsUrl } from "@common/utils/router"
 import './index.less';
 import Logo from '@assets/logo.png'
 function Root() {
+    const [state, setState] = useState('a');
+    console.log(state, 'state');
+    console.log(setState, 'setState');
     const appName = useSelector((state: any) => state.globalModel.appName);
-    console.log(appName)
     const dispatch = useDispatch();
     useEffect(() => {
         setTimeout(() => {
-            console.log('3s后修改');
             dispatch({
                 type: 'globalModel/setStore',
                 payload: {
